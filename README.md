@@ -9,6 +9,36 @@ This project reproduces a basic 3D environment inspired by Wolfenstein 3D, inclu
 
 ---
 
+## Build & Run
+
+### Requirements
+- Linux system
+- `minilibx` library with X11 support (downloaded during compiation)
+  
+> Note: Cub3D has been developed and tested on **Ubuntu 22.04 LTS**.  
+> The project is Linux-only and relies on X11/MinilibX for rendering, which allows efficient single-threaded 3D raycasting.
+
+### Compilation
+`make`
+
+### Run
+`./cub3d <map_file.cub>`
+ex : `./cub3d kino.cub`
+
+---
+
+## Controls
+
+- **W** : Move forward  
+- **S** : Move backward  
+- **A** : Move left  
+- **D** : Move right  
+- **Mouse** : Rotate view  
+- **Left Click** : Shoot  
+- **Right Click** : Reload  
+
+---
+
 ## Technical Overview
 
 ### Features
@@ -64,36 +94,6 @@ Cub3D is organized as a layered C application:
 - All dynamic allocations are tracked and freed on exit
 - Textures, maps, and image buffers are carefully cleaned
 - Use of inline functions and static buffers to minimize runtime allocations
-
----
-
-## Build & Run
-
-### Requirements
-- Linux system
-- `minilibx` library with X11 support (downloaded during compiation)
-- 
-> Note: Cub3D has been developed and tested on **Ubuntu 22.04 LTS**.  
-> The project is Linux-only and relies on X11/MinilibX for rendering, which allows efficient single-threaded 3D raycasting.
-
-### Compilation
-`make`
-
-### Run
-`./cub3d <map_file.cub>`
-ex : `./cub3d kino.cub`
-
----
-
-## Controls
-
-- **W** : Move forward  
-- **S** : Move backward  
-- **A** : Move left  
-- **D** : Move right  
-- **Mouse** : Rotate view  
-- **Left Click** : Shoot  
-- **Right Click** : Reload  
 
 ---
 
