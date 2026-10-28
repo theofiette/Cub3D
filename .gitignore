@@ -1,0 +1,6 @@
+cub3d
+.build/
+*.o
+*.d
+*.a
+minilibx-linux/

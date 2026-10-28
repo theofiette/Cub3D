@@ -6,7 +6,7 @@
 /*   By: tfiette <tfiette@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:12:21 by tchevall          #+#    #+#             */
-/*   Updated: 2025/12/19 16:05:21 by tfiette          ###   ########.fr       */
+/*   Updated: 2026/10/28 13:32:24 by tfiette          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	render_view_vertical_line(t_data *data, t_dda *var)
 	t_texture	*sprite;
 	t_image		*img;
 
+	sprite = NULL;
 	pick_texture(data, &sprite, var->side, var->ray_dir);
 	assign_wall_coord(data, var);
 	assign_drawing_point(data, var->final_dist, var->line);

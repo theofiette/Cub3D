@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchevall <tchevall@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tfiette <tfiette@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:01:11 by tchevall          #+#    #+#             */
-/*   Updated: 2025/12/02 17:01:21 by tchevall         ###   ########.fr       */
+/*   Updated: 2026/10/28 13:30:02 by tfiette          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	get_color_and_texture_loop(t_data *data, int map_file)
 
 	count = 0;
 	gnl_success = 0;
+	line = NULL;
 	while (!count || line)
 	{
 		line = get_next_line(map_file, &gnl_success);
@@ -78,10 +79,9 @@ void	get_color_and_texture_loop(t_data *data, int map_file)
 			set_error(data, ERR_MALLOC_PROBLEM);
 			break ;
 		}
-		else if (line)
+		else if (line && match_texture_id(line, data, 0, 1))
 		{
-			if (match_texture_id(line, data, 0, 1))
-				count ++;
+			count ++;
 		}
 		free(line);
 		if (count == TEXTURES_NBR)

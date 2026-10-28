@@ -7,15 +7,20 @@ A minimal 3D first-person shooter game in C, focusing on low-level graphics prog
 
 This project reproduces a basic 3D environment inspired by Wolfenstein 3D, including textured walls, floors and ceilings, interactive doors, and simple enemy AI, while emphasizing performance.
 
+<p align="center">
+  <img src="cub3d.gif" alt="Cub3D gameplay" width="800">
+</p>
+
 ---
 
 ## Build & Run
 
 ### Requirements
-- Linux system
-- `minilibx` library with X11 support (downloaded during compiation)
+- Linux with X11
+- `gcc` or `clang`, `make`
+- `minilibx` library with X11 support (downloaded during compilation)
   
-> Note: Cub3D has been developed and tested on **Ubuntu 22.04 LTS**.  
+> Note: Cub3D has been developed and tested on **Fedora Linux 44**.  
 > The project is Linux-only and relies on X11/MinilibX for rendering, which allows efficient single-threaded 3D raycasting.
 
 ### Compilation

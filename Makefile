@@ -3,7 +3,8 @@
 LIBFT_DIR   = libft
 LIBFT_A     = $(LIBFT_DIR)/libft.a
 MLX_DIR     = minilibx-linux
-MLX_FLAGS   = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz -lXfixes
+MLX_COMMIT	= f07d00f
+MLX_FLAGS   = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
 
 CC          = cc
 
@@ -11,7 +12,7 @@ NAME		= cub3d
 DIR   		= src
 INCLUDE_DIR = includes
 BUILD_DIR  	= .build
-CFLAGS      = -Wall -Wextra -Werror -g -MMD -I$(INCLUDE_DIR) -I$(LIBFT_DIR)/includes -I$(MLX_DIR) -O2 #-O3 -ffast-math
+CFLAGS      = -Wall -Wextra -Werror -std=gnu17 -g -MMD -I$(INCLUDE_DIR) -I$(LIBFT_DIR)/includes -isystem $(MLX_DIR) -O2 #-O3 -ffast-math
 
 # ==== SOURCES ====
 
@@ -76,7 +77,8 @@ $(LIBFT_A):
 	make -C $(LIBFT_DIR)
 
 $(MLX_DIR):
-	git clone https://github.com/42paris/minilibx-linux.git $(MLX_DIR) || true
+	git clone https://github.com/42paris/minilibx-linux.git $(MLX_DIR)
+	git -C $(MLX_DIR) checkout -q $(MLX_COMMIT)
 	make -C $(MLX_DIR)
 
 $(NAME): $(MLX_DIR) $(LIBFT_A) $(OBJS)  

@@ -6,7 +6,7 @@
 /*   By: tfiette <tfiette@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 09:55:20 by tfiette           #+#    #+#             */
-/*   Updated: 2025/12/12 16:10:08 by tfiette          ###   ########.fr       */
+/*   Updated: 2026/10/28 13:31:29 by tfiette          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	bgra_to_argb(unsigned char (*color)[4])
 	(*color)[1] = temp;
 }
 
-__attribute__((always_inline)) int	shadow(int pixel, int inv)
+__attribute__((always_inline)) inline int shadow(int pixel, int inv)
 {
 	unsigned int	rb;
 	unsigned int	g;
@@ -35,7 +35,7 @@ __attribute__((always_inline)) int	shadow(int pixel, int inv)
 	return ((rb & 0x00FF00FF) | g);
 }
 
-__attribute__((always_inline)) int	shadow_red(int pixel, int inv)
+__attribute__((always_inline)) inline int shadow_red(int pixel, int inv)
 {
 	unsigned int	r;
 	unsigned int	g;
@@ -51,7 +51,7 @@ __attribute__((always_inline)) int	shadow_red(int pixel, int inv)
 	return ((r << 16) | (g << 8) | b);
 }
 
-__attribute__((always_inline)) void	set_shadow(
+__attribute__((always_inline)) inline void	set_shadow(
 	t_data *data, int *color, int blender)
 {
 	if (data->player.hp <= 1)
@@ -60,7 +60,7 @@ __attribute__((always_inline)) void	set_shadow(
 		*color = shadow(*color, blender);
 }
 
-__attribute__((always_inline)) int	blend(int bg, int fg, int alpha)
+__attribute__((always_inline)) inline int blend(int bg, int fg, int alpha)
 {
 	unsigned int	inv;
 	unsigned int	r;
