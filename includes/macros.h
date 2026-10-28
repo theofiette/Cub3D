@@ -6,7 +6,7 @@
 /*   By: tfiette <tfiette@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:33:33 by tchevall          #+#    #+#             */
-/*   Updated: 2025/12/19 16:19:28 by tfiette          ###   ########.fr       */
+/*   Updated: 2026/10/28 13:40:52 by tfiette          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,16 +102,5 @@ Ceilling and floor dimensions aren't the same.\n"
 # define PERR_ZOMBIE_NBR			"Error\nToo many zombies.\n"
 # define PERR_DOOR_NBR			"Error\nToo many doors.\n"
 # define PERR_MALLOC_PROBLEM		"Error\nInternal malloc fail.\n"
-
-/*
-*	PROMPT USER INFOS
-*/
-
-# define PUI_KEEP_FILE		"Do you wanna save the generated file ?"
-# define PUI_FILE_NAME		"Enter file name or leave empty... > "
-# define PUI_FULL_RANDOM	"Do you want to skip map personalization ?"
-# define PUI_MAP_SIZE		"How big should the map be ?"
-# define PUI_ROOM_NBR		"How many rooms should there be ?"
-# define PUI_RANDOMNESS		"How crazy should the generation go ? [1-9] > "
 
 #endif
