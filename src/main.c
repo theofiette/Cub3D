@@ -6,7 +6,7 @@
 /*   By: tfiette <tfiette@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:26:00 by tchevall          #+#    #+#             */
-/*   Updated: 2025/12/19 13:55:14 by tfiette          ###   ########.fr       */
+/*   Updated: 2026/10/28 13:27:33 by tfiette          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ static inline void	preprocess(int argc, char **argv, t_data *data)
 	check_and_instantiate_zombies(data);
 	load_textures(data);
 	instanciate_window(&data->mlx_data, data);
-	XFixesHideCursor(((t_xvar *)data->mlx_data.mlx)->display,
-		((t_win_list *)data->mlx_data.win)->window);
+	mlx_mouse_hide(data->mlx_data.mlx, data->mlx_data.win);
 	mlx_mouse_move(data->mlx_data.mlx, data->mlx_data.win,
 		data->cache[MID_WIDTH], data->cache[MID_HEIGHT]);
 }
